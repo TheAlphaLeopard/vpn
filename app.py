@@ -32,8 +32,8 @@ def index():
     ''', vpn_status=vpn_status, current_ip=current_ip)
 
 def is_vpn_running():
-    result = subprocess.run(['systemctl', 'is-active', '--quiet', 'openvpn@server'])
-    return result.returncode == 0
+    result = subprocess.run(['service', 'openvpn', 'status'], capture_output=True, text=True)
+    return 'active (running)' in result.stdout
 
 def get_current_ip():
     result = subprocess.run(['/bin/bash', 'scripts/get_ip.sh'], capture_output=True, text=True)

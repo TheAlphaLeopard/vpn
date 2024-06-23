@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo systemctl stop openvpn@server
+sudo service openvpn stop
