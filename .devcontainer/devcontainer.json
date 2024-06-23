@@ -1,0 +1,7 @@
+{
+    "name": "VPN Dev Container",
+    "image": "mcr.microsoft.com/vscode/devcontainers/base:ubuntu",
+    "runArgs": ["--cap-add=NET_ADMIN"],
+    "postCreateCommand": "sudo apt update && sudo apt install -y openvpn easy-rsa python3 python3-pip curl && pip3 install flask"
+  }
+  

@@ -1,2 +1,0 @@
-# vpn
-hope it woekrs
